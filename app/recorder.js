@@ -9,22 +9,22 @@ class ClipboardRecorder {
    */
   config = {
     timeInterval: 100
-  }
+  };
 
   /**
    * @type Electron.Clipboard
    */
-  clipboard = null
+  clipboard = null;
 
   /**
    * @type string
    */
-  last = ""
+  last = "";
 
   /**
    * @type string[]
    */
-  history = []
+  history = [];
 
   /**
    *
@@ -35,25 +35,25 @@ class ClipboardRecorder {
     this.config = {
       ...this.config,
       ...config
-    }
-    this.clipboard = clipboard
+    };
+    this.clipboard = clipboard;
 
-    setInterval(this.record.bind(this), this.config.timeInterval)
+    setInterval(this.record.bind(this), this.config.timeInterval);
   }
 
   record() {
-    const text = this.clipboard.readText()
+    const text = this.clipboard.readText();
     if (this.last === text) {
-      return
+      return;
     }
 
-    this.last = text
-    this.history.push(text)
+    this.last = text;
+    this.history.push(text);
   }
 
   clear() {
-    this.history = []
+    this.history = [];
   }
 }
 
-module.exports = { ClipboardRecorder }
+module.exports = ClipboardRecorder;
