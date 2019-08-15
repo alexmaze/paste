@@ -1,0 +1,15 @@
+{
+  "name": "paste",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ./app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.0.2",
+    "node-osascript": "^2.1.0"
+  }
+}
